@@ -1,4 +1,4 @@
-window.doctorsWords = {
+window.doctorWords = {
     "aadan": "Aadan",
     "aaron": "Aaron",
     "abd": "Abd",

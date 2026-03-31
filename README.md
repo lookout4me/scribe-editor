@@ -144,7 +144,7 @@ scribe-editor/
 │   └── spellcheck.js   # Medical dictionary & word suggestions
 ├── data/
 │   └── words/
-│       ├── doctors.js  # Doctor/person names dictionary (1,132 words)
+│       ├── doctor.js  # Doctor/person names dictionary (1,132 words)
 │       └── medical.js  # Medical terms dictionary (540,000+ words)
 ├── tools/
 │   ├── sync-words.js   # Sync words from .bin/data to data/words

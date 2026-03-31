@@ -4,7 +4,7 @@
  * Sync Words Tool
  * 
  * Syncs words from .bin/data/medical.json and .bin/data/doctor.json
- * to data/words/medical.js and data/words/doctors.js
+ * to data/words/medical.js and data/words/doctor.js
  * 
  * Usage:
  *   node tools/sync-words.js
@@ -22,7 +22,7 @@ const MERGE_MODE = args.includes('--merge');
 // File paths
 const BIN_DOCTOR = path.join(__dirname, '../.bin/data/doctor.json');
 const BIN_MEDICAL = path.join(__dirname, '../.bin/data/medical.json');
-const OUT_DOCTORS = path.join(__dirname, '../data/words/doctors.js');
+const OUT_DOCTORS = path.join(__dirname, '../data/words/doctor.js');
 const OUT_MEDICAL = path.join(__dirname, '../data/words/medical.js');
 
 function loadJsonFile(filePath) {
@@ -104,7 +104,7 @@ function syncWords() {
     console.log('📊 Current Stats:');
     console.log(`   .bin/data/doctor.json:  ${binDoctorCount.toLocaleString()} words`);
     console.log(`   .bin/data/medical.json: ${binMedicalCount.toLocaleString()} words`);
-    console.log(`   data/words/doctors.js:  ${existingDoctorCount.toLocaleString()} words`);
+    console.log(`   data/words/doctor.js:  ${existingDoctorCount.toLocaleString()} words`);
     console.log(`   data/words/medical.js:  ${existingMedicalCount.toLocaleString()} words`);
     console.log('');
     
