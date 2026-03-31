@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Scribe Editor · HPI Note Dictation</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="scribe-app">
+        <div class="app-header">
+            <div class="title">
+                <h1>📝 Scribe Editor <span>HPI NOTES</span></h1>
+                <p>Type · Edit · Copy to EHR</p>
+            </div>
+        </div>
+
+        <div class="editor-container">
+            <!-- NOTE EDITOR -->
+            <div class="editor-panel">
+                <div class="panel-label">
+                    📝 HPI NOTE EDITOR
+                    <span style="display:flex; gap:6px;">
+                        <button id="myPhrasesBtn" style="background:#eef2f5; color:#2c7a6e; border:1px solid #cfdfe8; padding:2px 10px; border-radius:6px; font-size:0.6rem; cursor:pointer; font-weight:600;">📝 My Phrases</button>
+                    </span>
+                </div>
+                <div class="editor-box">
+                    <textarea id="editorTextarea" class="editor-textarea" spellcheck="false" placeholder="Write your HPI note here...&#10;&#10;Workflow:&#10;1. Type or use My Phrases templates&#10;2. Use dotphrases (e.g. ..npma, ..ekg)&#10;3. Tab through [placeholders] to fill in&#10;4. Copy to EHR when done"></textarea>
+                    <div class="editor-actions">
+                        <button id="clearEditorBtn" class="btn btn-clear">🗑️ Clear</button>
+                        <button id="copyEditorBtn" class="btn btn-copy">📋 Copy to EHR</button>
+                    </div>
+                </div>
+                <div class="note-helper">Type → Edit → Paste to EHR</div>
+            </div>
+        </div>
+
+        <footer>⚕️ HIPAA Compliant · No data stored · Session-only processing <span style="float:right; color:#2c7a6e; font-weight:600;">Sufian Ahmed</span></footer>
+    </div>
+
+    <!-- My Phrases Modal -->
+    <div class="modal-overlay" id="myPhrasesModal">
+        <div class="modal-panel">
+            <div class="modal-header">
+                <h3>📝 My Phrases</h3>
+                <button class="modal-close" onclick="closeMyPhrasesModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="phrase-search" id="phraseSearch" placeholder="Search by description...">
+                <ul class="phrase-list" id="phraseList"></ul>
+                <p id="noPhrasesMsg" style="text-align:center; color:#95adba; font-size:0.8rem; display:none;">No phrases found.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="data/words/doctors.js"></script>
+    <script src="data/words/medical.js"></script>
+    <script src="js/phrases.js"></script>
+    <script src="js/spellcheck.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
