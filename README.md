@@ -19,17 +19,20 @@ A lightweight, browser-based text editor designed for medical professionals to q
 - **🔒 HIPAA Compliant** — No data storage; nothing is saved locally or transmitted to servers
 - **🔄 Session Management** — Clear and reset with a single click for the next patient
 - **📱 Responsive Design** — Full-screen layout that adapts to all screen sizes
+- ✅ **Native Browser Spell Check** — Now with Google Chrome spelling checking enabled
 
 ### Phrases & Templates
 - **📝 My Phrases** — Pre-built cardiology templates accessible via button or dotphrase shortcuts
-- **⚡ Dotphrase Autocomplete** — Type `..` followed by a phrase code (e.g., `..new-p-ani`, `..lab`, `..ekg`) to auto-insert templates
+- **⚡ Dotphrase Autocomplete** — Type `//` followed by a phrase code (e.g., `//newp-ani`, `//labs`, `//ekg`) to auto-insert templates
 - **🔍 Placeholder Navigation** — Use Tab/Shift+Tab to jump between `[placeholders]` in templates
 - **📋 Quick Insert** — Double-click or select from popup to insert phrases
+- ✅ **Undo Support** — All insertions work with browser undo history (Ctrl+Z / Cmd+Z)
 
 ### Spell Check & Word Suggestions
 - **🔤 Medical Spell Check** — Comprehensive medical dictionary with 540,000+ terms (doctors, medications, procedures)
-- **💡 Word Suggestions** — Type `.` followed by letters to get word suggestions from the dictionary
+- **💡 Word Suggestions** — Type `..` followed by letters to get word suggestions from the dictionary
 - **📊 Real-time Checking** — Continuous spell checking as you type
+- ✅ **Undo History for Corrections** — Spelling corrections preserve browser undo stack
 
 ---
 
@@ -38,33 +41,38 @@ A lightweight, browser-based text editor designed for medical professionals to q
 ### Templates (dotphrase)
 | Code | Description |
 |------|-------------|
-| `..new-p-ani` | New Patient Template - Dr. Mohammad Ani |
-| `..return-p-ani` | Follow-up Patient Template - Dr. Mohammad Ani |
-| `..okeefe` | Dr. O'Keefe's Return Patient |
-| `..clearance` | Clearance template |
-| `..lab` | Full Lab Template |
-
-### Procedures (dotphrase)
-| Code | Description |
-|------|-------------|
-| `..ekg` | EKG |
-| `..holter` | Holter Monitor |
-| `..echo` | Echocardiogram |
-| `..stress` | Nuclear Stress Test |
-| `..cath` | Cardiac Cath |
-| `..stent` | Stent documentation |
-| `..device` | Cardiac Device (Pacemaker/ICD/CRT) |
-| `..tavr` | TAVR / Valve |
+| `//newp-ani` | New Patient Template - Dr. Mohammad Ani |
+| `//okeefe` | Dr. O'Keefe's Return Patient |
+| `//preop` | Preprocedural Examination Clearance |
+| `//labs` | Full Lab Template |
+| `//lab-cmp` | CMP Lab Template |
+| `//lab-cbc` | CBC Lab Template |
+| `//lab-lipid` | Lipid Panel Template |
+| `//lab-a1c` | Hemoglobin A1c |
+| `//ekg` | EKG |
+| `//holter` | Holter Monitor |
+| `//echo` | Echocardiogram |
+| `//stress` | Nuclear Stress Test |
+| `//cath` | Cardiac Cath |
+| `//stent` | Stent documentation |
+| `//device` | Cardiac Device (Pacemaker/ICD/CRT) |
+| `//tavr` | TAVR / Valve |
+| `//bp-log-reviewed` | Home BP Log Reviewed |
 
 ### Text Phrases (dotphrase)
 | Code | Description |
 |------|-------------|
-| `..pal-racing` | Rapid Heartbeat Palpitations |
-| `..pal-irregular` | Irregular or Fluttering Palpitations |
-| `..pal-skip` | Skipped Beats or Thumps |
-| `..pal-slow` | Slow Heartbeat or Pauses |
-| `..pal-brief` | Paroxysmal Palpitations |
-| `..pal-trigger` | Triggered Palpitations |
+| `//pal-racing` | Rapid Heartbeat Palpitations |
+| `//pal-irregular` | Irregular or Fluttering Palpitations |
+| `//pal-skip` | Skipped Beats or Thumps |
+| `//pal-slow` | Slow Heartbeat or Pauses |
+| `//pal-brief` | Paroxysmal Palpitations |
+| `//pal-trigger` | Triggered Palpitations |
+| `//fu-echo` | Continue Echo Surveillance |
+| `//fu-clinical` | Clinical Monitoring |
+| `//rf-mod` | Risk Factor Modification |
+| `//med-compliance` | Medication Compliance |
+| `//bp-log-keep` | Instructed to Keep Home BP Log |
 
 ---
 
@@ -98,8 +106,8 @@ A lightweight, browser-based text editor designed for medical professionals to q
 ### Basic Workflow
 
 1. **Type or Use Templates** — Start typing directly, or click `📝 My Phrases` to insert a template
-2. **Use Dotphrases** — Type `..` followed by a code (e.g., `..new-p-ani`) to auto-insert templates
-3. **Use Word Suggestions** — Type `.` followed by letters to get word suggestions from the medical dictionary
+2. **Use Dotphrases** — Type `//` followed by a code (e.g., `//newp-ani`) to auto-insert templates
+3. **Use Word Suggestions** — Type `..` followed by letters to get word suggestions from the medical dictionary
 4. **Navigate Placeholders** — Press Tab/Shift+Tab to jump between `[placeholders]` in templates
 5. **Fill in Details** — Replace placeholders with patient-specific information
 6. **Copy to EHR** — Click `📋 Copy to EHR` to copy your finalized HPI note, then paste directly into your EHR
@@ -108,13 +116,13 @@ A lightweight, browser-based text editor designed for medical professionals to q
 ### Using Phrases
 
 1. **Via Button** — Click `📝 My Phrases` to open the phrase modal
-2. **Via Dotphrase** — Type `..` followed by the phrase code (e.g., `..new-p-ani`)
+2. **Via Dotphrase** — Type `//` followed by the phrase code (e.g., `//newp-ani`)
 3. **Navigate** — Use ↑↓ arrows to browse, Tab/Enter to select
 4. **Fill Placeholders** — After insertion, Tab jumps between `[placeholders]`
 
 ### Using Word Suggestions
 
-1. **Type `.`** — Start typing a word after the dot
+1. **Type `..`** — Start typing a word after the double dot
 2. **Browse** — Use ↑↓ arrows to navigate suggestions
 3. **Select** — Press Tab to insert the selected word
 4. **Cancel** — Press Escape to close the popup
@@ -144,8 +152,8 @@ scribe-editor/
 │   └── spellcheck.js   # Medical dictionary & word suggestions
 ├── data/
 │   └── words/
-│       ├── doctor.js  # Doctor/person names dictionary (1,132 words)
-│       └── medical.js  # Medical terms dictionary (540,000+ words)
+│       ├── doctor.js  # Doctor/person names dictionary
+│       └── medical.js  # Medical terms dictionary
 ├── tools/
 │   ├── sync-words.js   # Sync words from .bin/data to data/words
 │   ├── filter-words.js # Remove words by length
@@ -164,8 +172,8 @@ scribe-editor/
 - **Header** — App title and branding
 - **Editor Panel** — Full-width textarea for editing notes with spell check
 - **Phrase Modal** — Quick access to templates and text snippets via search or dotphrases
-- **Dotphrase Popup** — Autocomplete suggestions as you type `..` codes
-- **Word Popup** — Word suggestions as you type `.` codes
+- **Dotphrase Popup** — Autocomplete suggestions as you type `//` codes
+- **Word Popup** — Word suggestions as you type `..` codes
 
 ---
 
@@ -200,7 +208,7 @@ Add new phrases to the `phrases` array:
     type: "Template",  // or "Text"
     description: "Your Phrase Description",
     content: "Your phrase content with [placeholders]",
-    dotphrase: "shortcut"  // Type ..shortcut to insert
+    dotphrase: "shortcut"  // Type //shortcut to insert
 }
 ```
 
