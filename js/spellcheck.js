@@ -131,6 +131,22 @@ function createWordPopup() {
         overflow-y: auto;
     `;
     document.body.appendChild(window.wordPopup);
+
+    // Delegated click handler (works after scroll/rerender)
+    window.wordPopup.addEventListener('click', (e) => {
+        const item = e.target.closest('.word-item');
+        if (item && item.dataset.index) {
+            insertWord(parseInt(item.dataset.index));
+        }
+    });
+
+    // Delegated mouse handlers
+    window.wordPopup.addEventListener('mouseover', (e) => {
+        const item = e.target.closest('.word-item');
+        if (item && item.dataset.index) {
+            highlightWordItem(parseInt(item.dataset.index));
+        }
+    });
 }
 
 function showWordPopup(query, x, y, dotIndex) {
@@ -314,19 +330,19 @@ function initWordPopup() {
         const cursorPos = editorTextarea.selectionStart;
         const beforeCursor = text.substring(0, cursorPos);
         
-        // Find the last "." before cursor (not at cursor-1, but actually find it)
-        const dotIndex = beforeCursor.lastIndexOf('.');
+         // Find the last ".." before cursor
+         const dotIndex = beforeCursor.lastIndexOf('..');
         
         if (dotIndex !== -1) {
-            // Check if there's another "." right before this one (meaning it's ".." for dotphrases)
-            // If so, don't show word popup - let phrases.js handle it
-            if (dotIndex > 0 && text.charAt(dotIndex - 1) === '.') {
-                hideWordPopup();
-                return;
-            }
+             // Check if there's another "/" right before this one (meaning it's "//" for dotphrases)
+             // If so, don't show word popup - let phrases.js handle it
+             if (dotIndex > 0 && text.charAt(dotIndex - 1) === '/') {
+                 hideWordPopup();
+                 return;
+             }
             
             // Get the query (text after the dot, before cursor)
-            const query = beforeCursor.substring(dotIndex + 1);
+             const query = beforeCursor.substring(dotIndex + 2);
             
             // Check if query contains a space (would indicate end of word)
             if (query.includes(' ') || query.includes('\n')) {
@@ -439,8 +455,16 @@ function replaceWord(oldWord, newWord) {
     const index = text.lastIndexOf(oldWord);
     
     if (index !== -1) {
-        editor.value = text.substring(0, index) + newWord + text.substring(index + oldWord.length);
         editor.focus();
+        
+        // Select the old word
+        editor.selectionStart = index;
+        editor.selectionEnd = index + oldWord.length;
+        
+        // Use execCommand to preserve undo history
+        document.execCommand('insertText', false, newWord);
+        
+        // Position cursor after replaced word
         editor.selectionStart = index + newWord.length;
         editor.selectionEnd = index + newWord.length;
     }
@@ -481,6 +505,7 @@ function initSpellCheck() {
     // Check spelling on input
     editor.addEventListener('input', () => {
         runSpellCheck();
+        hideSuggestions();
     });
     
     // Show suggestions on double-click on misspelled word

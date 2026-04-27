@@ -4,118 +4,171 @@ const phrases = [
     {
         type: "Template",
         description: "New Patient Template - Dr. Mohammad Ani",
-        content: "[ Age ] year old [ male/female ] new patient presenting for [ Reason 4 Visit ].\nChest pain is [absent / described as ___ quality, ___ location, without radiation, lasting ___ minutes, provoked by ___ , relieved by ___]. SOB is [absent / present with exertion only / also with orthopnea or PND]. LE edema is [absent / trace / 1+ to 4+, bilateral or unilateral]. Palpitations are [absent / described as racing or fluttering, regular or irregular]. Exercise tolerance is [unlimited / limited to ___ blocks or ___ flights, NYHA class ___].\n\nSocial History: [    ]\nFamily History: [    ]\n\nAllergies: [    ]\nMedications: [    ]\n\nPROCEDURES\nEKG Today: HR: [  ] bpm, [  ]\n\nLABS\n[Date]\nCBC/Chemistry: WBC [  ], Hgb [  ], Platelets [  ], Glucose [  ], BUN [  ], Creatinine [  ]\nElectrolytes: Na [  ], K [  ], Cl [  ], CO2 [  ]\nLiver: AST [  ], ALT [  ]\nLipids: Chol Total [  ], Trigly [  ], HDL [  ], LDL [  ]\nHgbA1c: [  ]\n\nPHYSICAL EXAMINATION\nHeight: [  ]'[  ], Weight: [  ] lbs, BP: [  ]/[  ] mmHg, PR: [  ] bpm, SpO2: [  ]%\nCVS: RRR, normal S1/S2, no murmurs, no rubs, no gallops\nLungs: Clear to auscultation bilaterally\nAbdomen: Soft, non-tender, no hepatosplenomegaly\nExtremities: No clubbing, no cyanosis, no edema\n\nASSESSMENT & PLAN\n[        ]\n\nRECOMMENDATIONS\n[        ]\n\nFollow-up in [X weeks/months].\n\n[MA signature]",
-        dotphrase: "new-p-ani"
-    },
-    {
-        type: "Template",
-        description: "Follow-up Patient Template - Dr. Mohammad Ani",
-        content: "[ Age ] year old [ male/female ] return patient presenting for [ Reason 4 Visit ].\nChest pain is [absent / described as ___ quality, ___ location, without radiation, lasting ___ minutes, provoked by ___ , relieved by ___]. SOB is [absent / present with exertion only / also with orthopnea or PND]. LE edema is [absent / trace / 1+ to 4+, bilateral or unilateral]. Palpitations are [absent / described as racing or fluttering, regular or irregular]. Exercise tolerance is [unlimited / limited to ___ blocks or ___ flights, NYHA class ___].\n\nSocial History: [    ]\nFamily History: [    ]\n\nAllergies: [    ]\nMedications: [    ]\n\nPROCEDURES\nEKG Today: HR: [  ] bpm, [  ]\n\nLABS\n[Date]\nCBC/Chemistry: WBC [  ], Hgb [  ], Platelets [  ], Glucose [  ], BUN [  ], Creatinine [  ]\nElectrolytes: Na [  ], K [  ], Cl [  ], CO2 [  ]\nLiver: AST [  ], ALT [  ]\nLipids: Chol Total [  ], Trigly [  ], HDL [  ], LDL [  ]\nHgbA1c: [  ]\n\nPHYSICAL EXAMINATION\nWeight: [  ] lbs, BP: [  ]/[  ] mmHg, PR: [  ] bpm, SpO2: [  ]%\nCVS: RRR, normal S1/S2, no murmurs, no rubs, no gallops\nLungs: Clear to auscultation bilaterally\nAbdomen: Soft, non-tender, no hepatosplenomegaly\nExtremities: No clubbing, no cyanosis, no edema\n\nASSESSMENT & PLAN\n[        ]\n\nRECOMMENDATIONS\n[        ]\n\nFollow-up in [X weeks/months].\n\n[MA signature]",
-        dotphrase: "return-p-ani"
+        dotphrase: "newp-ani",
+        content: "New [ male/female ] patient presenting for [ Reason 4 Visit ].\nChest pain is [absent / described as ___ quality, ___ location, without radiation, lasting ___ minutes, provoked by ___ , relieved by ___]. SOB is [absent / present with exertion only / also with orthopnea or PND]. LE edema is [absent / trace / 1+ to 4+, bilateral or unilateral]. Palpitations are [absent / described as racing or fluttering, regular or irregular].\n\nAllergies: [    ]\nMedications: [    ]\n\nSocial History: [    ]\nFamily History: [    ]\n\nPROCEDURES, LABS, IMAGING\n[        ]\n\nPHYSICAL EXAMINATION\nWeight: [  ] lbs, BP: [  ]/[  ] mmHg, PR: [  ] bpm, SpO2: [  ]%\nCVS: RRR, normal S1/S2, no murmurs, no rubs, no gallops\nLungs: Clear to auscultation bilaterally\nAbdomen: Soft, non-tender, no hepatosplenomegaly\nExtremities: No clubbing, no cyanosis, no edema\n\nASSESSMENT & PLAN\n[        ]\n\nRECOMMENDATIONS\n[        ]\n\nFollow-up in [X weeks/months].\nSA"
     },
     {
         type: "Template",
         description: "Dr. O'Keefe's Return Patient",
-        content: "Previously a patient of Dr. O'Keefe now visiting Dr. [  ].",
-        dotphrase: "okeefe"
+        dotphrase: "okeefe",
+        content: "Previously a patient of Dr. O'Keefe now visiting Dr. [  ]."
     },
     {
         type: "Template",
-        description: "Clearance",
-        content: "CLEARANCE: Patient is medically optimized and cleared for [procedure] from a cardiac standpoint. Recommend [monitoring / follow-up / medication changes / medication compliance]",
-        dotphrase: "clearance"
+        description: "Preprocedural Examination",
+        dotphrase: "preop",
+        content: "Encounter for other preprocedural examination\nPatient evaluated for preprocedural cardiovascular assessment. Cardiac status reviewed and optimized.\nPatient is medically optimized and cleared for [ procedure ] from a cardiac standpoint and is considered [low / intermediate / high] cardiac risk. [Recommendations: routine perioperative monitoring / cardiology follow-up as scheduled / continuation of current cardiac medications / strict medication compliance / specific medication adjustments if applicable]."
     },
     {
         type: "Template",
         description: "Full Lab Template",
-        content: "[Date]\nCBC/Chemistry: WBC [  ], Hgb [  ], Platelets [  ], Glucose [  ], BUN [  ], Creatinine [  ]\nElectrolytes: Na [  ], K [  ], Cl [  ], CO2 [  ]\nLiver: AST [  ], ALT [  ]\nLipids: Chol Total [  ], Triglycerides [  ], HDL [  ], LDL [  ]\nHgbA1c: [  ]",
-        dotphrase: "lab"
+        dotphrase: "labs",
+        content: "Labs [Date]: Glu [  ], BUN [  ], Cr [  ], eGFR [  ], Na [  ], K [  ], Cl [  ], CO2 [  ], AST [  ], ALT [  ], WBC [  ], RBC [  ], Hgb [  ], Plt [  ], Chol Total [  ], Trig [  ], HDL [  ], LDL [  ], HgbA1c: [  ]"
     },
-    // Procedures
+    {
+        type: "Template",
+        description: "Full Lab Template",
+        dotphrase: "lab-cmp",
+        content: "Glu [  ], BUN [  ], Cr [  ], eGFR [  ], Na [  ], K [  ], Cl [  ], CO2 [  ], AST [  ], ALT [  ]"
+    },
+    {
+        type: "Template",
+        description: "Full Lab Template",
+        dotphrase: "lab-cbc",
+        content: "WBC [  ], RBC [  ], Hgb [  ], Plt [  ]"
+    },
+    {
+        type: "Template",
+        description: "Full Lab Template",
+        dotphrase: "lab-lipid",
+        content: "Chol Total [  ], Trig [  ], HDL [  ], LDL [  ]"
+    },
+    {
+        type: "Template",
+        description: "Full Lab Template",
+        dotphrase: "lab-a1c",
+        content: "HgbA1c: [  ]"
+    },
     {
         type: "Template",
         description: "EKG",
-        content: "EKG: [Date] - HR: [  ] bpm, [NSR/A-fib/Atrial flutter/VT/Bradyarrhythmias],",
-        dotphrase: "ekg"
+        dotphrase: "ekg",
+        content: "EKG [Date]: - HR: [  ] bpm, [NSR/A-fib/Atrial flutter/VT/Bradyarrhythmias],"
     },
     {
         type: "Template",
         description: "Holter Monitor",
-        content: "Holter: [Date] - Duration: [24/48/72] hr, Predominant NSR, [  ] PACs, [  ] PVCs, [  ] A-fib",
-        dotphrase: "holter"
+        dotphrase: "holter",
+        content: "Holter [Date]: - Duration: [24/48/72] hr, Predominant NSR, [  ] PACs, [  ] PVCs, [  ] A-fib”"
     },
     {
         type: "Template",
         description: "Echocardiogram",
-        content: "Echo: [Date] - EF: [  ]%, [Trace MR, Mild TR]",
-        dotphrase: "echo"
+        dotphrase: "echo",
+        content: "Echo [Date]: - EF: [  ]%, [Trace MR, Mild TR]"
     },
     {
         type: "Template",
         description: "Nuclear Stress Test",
-        content: "Nuclear Stress Test: [Date] - [Normal / Ischemia / Arrhythmia / other]",
-        dotphrase: "stress"
+        dotphrase: "stress",
+        content: "Nuclear Stress Test [Date]: - [Normal / Ischemia / Arrhythmia / other]"
     },
     {
         type: "Template",
         description: "Cardiac Cath",
-        content: "Cath: [Date] - [Coronary artery disease / stenosis / anatomy / other]",
-        dotphrase: "cath"
+        dotphrase: "cath",
+        content: "Cath [Date]: - [Coronary artery disease / stenosis / anatomy / other]"
     },
     {
         type: "Template",
         description: "Stent",
-        content: "Stent: [Date] - Vessel: [LAD / RCA / LCx / Other], Type: [DES / BMS], [ Findings ]",
-        dotphrase: "stent"
+        dotphrase: "stent",
+        content: "Stent [Date]: - Vessel: [LAD / RCA / LCx / Other], Type: [DES / BMS], [ Findings ]"
     },
     {
         type: "Template",
         description: "Cardiac Device",
-        content: "Device: [Date] - Type: [Pacemaker / ICD / CRT-P / CRT-D], [Function / interrogation / other]",
-        dotphrase: "device"
+        dotphrase: "device",
+        content: "Device [Date]: - Type: [Pacemaker / ICD / CRT-P / CRT-D], [Function / interrogation / other]"
     },
     {
         type: "Template",
         description: "TAVR / Valve",
-        content: "TAVR: [Date] - Type: [Balloon-expandable / Self-expanding], [Post-procedure EF / other]",
-        dotphrase: "tavr"
+        dotphrase: "tavr",
+        content: "TAVR [Date]: - Type: [Balloon-expandable / Self-expanding], [Post-procedure EF / other]"
+    },
+    {
+        type: "Template",
+        description: "Home BP Log Reviewed",
+        dotphrase: "bp-log-reviewed",
+        content: "Home blood pressure log reviewed and discussed. Readings are overall [within goal / above goal / variable] around [ log range reviewed ]. Continue current management."
     },
     // Text Phrases
     {
         type: "Text",
         description: "Rapid Heartbeat Palpitations",
-        content: "Patient felt intermittent rapid heartbeat, described as racing or pounding. Occurs with activity or stress. No associated chest pain, syncope, or shortness of breath.",
-        dotphrase: "pal-racing"
+        dotphrase: "pal-racing",
+        content: "Patient felt intermittent rapid heartbeat, described as racing or pounding. Occurs with activity or stress. No associated chest pain, syncope, or shortness of breath."
     },
     {
         type: "Text",
         description: "Irregular or Fluttering Palpitations",
-        content: "Patient felt episodes of irregular or fluttering heartbeat, described as quivering in the chest. Occurs intermittently. No associated chest pain, dizziness, or syncope.",
-        dotphrase: "pal-irregular"
+        dotphrase: "pal-irregular",
+        content: "Patient felt episodes of irregular or fluttering heartbeat, described as quivering in the chest. Occurs intermittently. No associated chest pain, dizziness, or syncope."
     },
     {
         type: "Text",
         description: "Skipped Beats or Thumps",
-        content: "Patient felt occasional skipped or extra beats, described as thumping in the chest. No associated lightheadedness, chest pain, or syncope.",
-        dotphrase: "pal-skip"
+        dotphrase: "pal-skip",
+        content: "Patient felt occasional skipped or extra beats, described as thumping in the chest. No associated lightheadedness, chest pain, or syncope."
     },
     {
         type: "Text",
         description: "Slow Heartbeat or Pauses",
-        content: "Patient felt brief pauses or slow heartbeat, described as intermittent slowing or stopping. No associated dizziness, syncope, or exertional intolerance.",
-        dotphrase: "pal-slow"
+        dotphrase: "pal-slow",
+        content: "Patient felt brief pauses or slow heartbeat, described as intermittent slowing or stopping. No associated dizziness, syncope, or exertional intolerance."
     },
     {
         type: "Text",
         description: "Paroxysmal Palpitations",
-        content: "Patient felt intermittent palpitations that come and go, described as brief fluttering or racing beats lasting seconds to minutes. No associated chest pain, shortness of breath, or syncope. Episodes self-terminate.",
-        dotphrase: "pal-brief"
+        dotphrase: "pal-brief",
+        content: "Patient felt intermittent palpitations that come and go, described as brief fluttering or racing beats lasting seconds to minutes. No associated chest pain, shortness of breath, or syncope. Episodes self-terminate."
     },
     {
         type: "Text",
         description: "Triggered Palpitations",
-        content: "Patient felt palpitations triggered by exertion, caffeine, or stress, described as rapid or fluttering. No associated chest pain, dizziness, or syncope.",
-        dotphrase: "pal-trigger"
+        dotphrase: "pal-trigger",
+        content: "Patient felt palpitations triggered by exertion, caffeine, or stress, described as rapid or fluttering. No associated chest pain, dizziness, or syncope."
+    },
+    {
+        type: "Text",
+        description: "Continue Echo Surveillance",
+        dotphrase: "fu-echo",
+        content: "We will continue surveillance with periodic echocardiograms to monitor cardiac structure and function."
+    },
+    {
+        type: "Text",
+        description: "Clinical Monitoring",
+        dotphrase: "fu-clinical",
+        content: "We will continue to monitor clinically with routine follow-up and reassessment of symptoms."
+    },
+    {
+        type: "Text",
+        description: "Risk Factor Modification",
+        dotphrase: "rf-mod",
+        content: "Continue aggressive risk factor modification including blood pressure control, lipid management, diet, and regular exercise."
+    },
+    {
+        type: "Text",
+        description: "Medication Compliance",
+        dotphrase: "med-compliance",
+        content: "Emphasized strict medication compliance. Patient verbalized understanding."
+    },
+    {
+        type: "Text",
+        description: "Instructed to Keep Home BP Log",
+        dotphrase: "bp-log-keep",
+        content: "Patient instructed to maintain a home blood pressure log and bring readings to next visit for review. Proper measurement technique reinforced."
     }
 ];
 
@@ -149,7 +202,7 @@ function renderPhraseList(filter = '') {
     noMsg.style.display = 'none';
     list.innerHTML = filtered.map((p, i) => {
         const preview = p.content.length > 60 ? p.content.substring(0, 60) + '...' : p.content;
-        return '<li class="phrase-item" ondblclick="insertPhrase(' + i + ')">' +
+        return '<li class="phrase-item" data-index="' + i + '">' +
             '<div class="phrase-item-desc">' + escapeHtml(p.description) + '</div>' +
             '<div class="phrase-item-type">' + escapeHtml(p.type) + '</div>' +
             '<div class="phrase-item-preview">' + escapeHtml(preview) + '</div>' +
@@ -267,6 +320,22 @@ function createDotphrasePopup() {
         overflow-y: auto;
     `;
     document.body.appendChild(dotphrasePopup);
+
+    // Delegated click handler (works after scroll/rerender)
+    dotphrasePopup.addEventListener('click', (e) => {
+        const item = e.target.closest('.dotphrase-item');
+        if (item && item.dataset.index) {
+            insertDotphrase(parseInt(item.dataset.index));
+        }
+    });
+
+    // Delegated mouse handlers
+    dotphrasePopup.addEventListener('mouseover', (e) => {
+        const item = e.target.closest('.dotphrase-item');
+        if (item && item.dataset.matchIndex) {
+            highlightDotphraseItem(parseInt(item.dataset.matchIndex));
+        }
+    });
 }
 
 let dotphraseSelectedIndex = 0;
@@ -355,7 +424,7 @@ function showDotphrasePopup(query, x, y) {
                     style="padding: 6px 12px; cursor: pointer; font-size: 0.85rem; color: #1a2a32; background: ${bgColor}; border-left: 3px solid ${borderColor};"
                     onmouseover="highlightDotphraseItem(${i})"
                     onmouseout="unhighlightDotphraseItem(${i})">
-                    <div style="font-weight:600;">..${escapeHtml(phrase.dotphrase)}</div>
+                    <div style="font-weight:600;">//${escapeHtml(phrase.dotphrase)}</div>
                     <div style="font-size:0.75rem; color:#6b8b9b; margin-top:2px;">${escapeHtml(phrase.description)}</div>
                     <div style="font-size:0.7rem; color:#95adba; margin-top:2px;">${escapeHtml(preview)}</div>
                 </div>`;
@@ -413,10 +482,10 @@ function insertDotphrase(index) {
     const content = phrases[index].content;
     const ta = document.getElementById('editorTextarea');
     
-    // Find the ".." and replace it with the phrase
+    // Find the "//" and replace it with the phrase
     const cursorPos = ta.selectionStart;
     const beforeCursor = ta.value.substring(0, cursorPos);
-    const dotIndex = beforeCursor.lastIndexOf('..');
+    const dotIndex = beforeCursor.lastIndexOf('//');
     
     if (dotIndex !== -1) {
         // Select from ".." to cursor position
@@ -440,10 +509,21 @@ function initPhraseEvents() {
     const phraseSearch = document.getElementById('phraseSearch');
     const myPhrasesModal = document.getElementById('myPhrasesModal');
 
+    // Create popup and attach events immediately on page load
+    createDotphrasePopup();
+
     document.getElementById('myPhrasesBtn').addEventListener('click', openMyPhrasesModal);
 
     phraseSearch.addEventListener('input', (e) => {
         renderPhraseList(e.target.value);
+    });
+
+    // Delegated events for phrase items (works even after scroll/rerender)
+    document.getElementById('phraseList').addEventListener('dblclick', (e) => {
+        const item = e.target.closest('.phrase-item');
+        if (item && item.dataset.index) {
+            insertPhrase(parseInt(item.dataset.index));
+        }
     });
 
     myPhrasesModal.addEventListener('click', (e) => {
@@ -475,8 +555,8 @@ function initPhraseEvents() {
         const cursorPos = editorTextarea.selectionStart;
         const beforeCursor = text.substring(0, cursorPos);
         
-        // Find the last ".." before cursor
-        const dotIndex = beforeCursor.lastIndexOf('..');
+        // Find the last "//" before cursor
+        const dotIndex = beforeCursor.lastIndexOf('//');
         
         if (dotIndex !== -1) {
             const query = beforeCursor.substring(dotIndex + 2);
